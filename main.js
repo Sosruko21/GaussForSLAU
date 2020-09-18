@@ -2,7 +2,7 @@
 let matrix = [];        /* Объявление матрицы и всех необходимых переменных */
 let detParts = [];
 let i, j, k;
-let m, n;
+let m;
 let height, width;
 let coef;
 let det = 1;
@@ -52,7 +52,7 @@ for (i = 0; i < matrix.length; i++) {       /* Цикл для рассчета 
 
     detParts[i] = matrix[i][i]      /* Запись делителей в массив для дальнейшего подсчета детерминанта */
 
-    alert("Делим строку на значение главной диагонали")
+
     for (j = 0; j < matrix[0].length; j++) {
         matrix[i][j] = matrix[i][j] / detParts[i];      /* Разделение строки (перебор ячеек через цикл) на делитель */
     }
@@ -60,7 +60,6 @@ for (i = 0; i < matrix.length; i++) {       /* Цикл для рассчета 
     for (m = 0; m < matrix.length; m++) {
         console.log('' + matrix[m]);
     };
-    alert("Записать результат из консоли и нажать ок")
 
     console.log('Зануление ячеек ниже главной диагонали')
     for (k = i + 1; k < matrix.length; k++) {       /* Зануление ячеек, стоящих ниже главной диагонали */
@@ -73,7 +72,6 @@ for (i = 0; i < matrix.length; i++) {       /* Цикл для рассчета 
     for (m = 0; m < matrix.length; m++) {
         console.log('' + matrix[m]);
     };
-    alert("Записать результат из консоли и нажать ок")
 };
 
 for (i = 0; i < detParts.length; i++) {     /* Расчет детерминанта */
@@ -129,6 +127,10 @@ for (i = 0; i < mirrorMatrix.length; i++) {  /* Создание новой ра
 
 let divider = [];
 
+console.log('Расширенная исходная матрица: ')
+for (m = 0; m < mirrorMatrix.length; m++) {
+    console.log('' + mirrorMatrix[m]);
+};
 for (i = 0; i < mirrorMatrix.length; i++) {
 
     if (mirrorMatrix[i][i] == 0) {
@@ -141,18 +143,32 @@ for (i = 0; i < mirrorMatrix.length; i++) {
 
     divider[i] = mirrorMatrix[i][i];
 
+    
     for (j = 0; j < mirrorMatrix[0].length; j++) {
         mirrorMatrix[i][j] = mirrorMatrix[i][j] / divider[i];
     }
+    console.log('Шаг' + (i + 1));
+    for (m = 0; m < mirrorMatrix.length; m++) {
+        console.log('' + mirrorMatrix[m]);
+    };
+
+    console.log('Зануление ячеек ниже главной диагонали')
     for (k = i + 1; k < mirrorMatrix.length; k++) {
         coef = mirrorMatrix[k][i] / mirrorMatrix[i][i];
         for (j = 0; j < mirrorMatrix[0].length; j++) {
             mirrorMatrix[k][j] = mirrorMatrix[k][j] - (mirrorMatrix[i][j] * coef)
+
+            for (m = 0; m < mirrorMatrix.length; m++) {
+                console.log('' + mirrorMatrix[m]);
+            };
         }
     }
 }; /* Тут закончился прямой ход метода Гаусса */
 
+console.log('Обратный ход Гаусса:');
+console.log('Зануление ячеек выше главной диагонали');
 for (i = mirrorMatrix.length - 1; i > -1; i--) {
+    console.log('Шаг'+(i-mirrorMatrix+2).toString()+':')
     for (k = i - 1; k > -1; k--) {
         coef = mirrorMatrix[k][i] / mirrorMatrix[i][i];
         for (j = mirrorMatrix[0].length - 1; j > -1; j--) {
