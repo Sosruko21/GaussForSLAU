@@ -2,6 +2,7 @@
 let matrix = [];        /* Объявление матрицы и всех необходимых переменных */
 let detParts = [];
 let i, j, k;
+let m, n;
 let height, width;
 let coef;
 let det = 1;
@@ -47,15 +48,28 @@ for (i = 0; i < matrix.length; i++) {       /* Цикл для рассчета 
 
     detParts[i] = matrix[i][i]      /* Запись делителей в массив для дальнейшего подсчета детерминанта */
 
+    alert("Делим строку на значение главной диагонали")
     for (j = 0; j < matrix[0].length; j++) {
         matrix[i][j] = matrix[i][j] / detParts[i];      /* Разделение строки (перебор ячеек через цикл) на делитель */
     }
+    console.log('Шаг' + (i + 1));
+    for (m = 0; m < matrix.length; m++) {
+        console.log('' + matrix[m]);
+    };
+    alert("Записать результат из консоли и нажать ок")
+
+    console.log('Зануление ячеек ниже главной диагонали')
     for (k = i + 1; k < matrix.length; k++) {       /* Зануление ячеек, стоящих ниже главной диагонали */
         coef = matrix[k][i] / matrix[i][i];
         for (j = 0; j < matrix[0].length; j++) {
             matrix[k][j] = matrix[k][j] - (matrix[i][j] * coef)
         }
     }
+
+    for (m = 0; m < matrix.length; m++) {
+        console.log('' + matrix[m]);
+    };
+    alert("Записать результат из консоли и нажать ок")
 };
 
 for (i = 0; i < detParts.length; i++) {     /* Расчет детерминанта */
@@ -71,7 +85,7 @@ for (i = 0; i < matrix.length; i++) {
     xMatrix[i] = xN;
     xG = 0
     for (j = 1; j < i + 2 && i < matrix.length - 1; j++) {
-        xG = xG + xMatrix[j-1] * matrix[matrix.length - 2 - i][width - 1 - j];
+        xG = xG + xMatrix[j - 1] * matrix[matrix.length - 2 - i][width - 1 - j];
     }
     console.log('x' + (height - i).toString() + ' = ' + xN);
 };
