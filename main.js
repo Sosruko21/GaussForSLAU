@@ -186,4 +186,5 @@ for (i = mirrorMatrix.length - 1; i > 0; i--) {
     };
 };
 console.log(mirrorMatrix);
+console.log('\n');console.log('\n');console.log('\n');
 console.log('Придумал и написал Тагиров Сослан, М2О-310Б-18, 2020.09')
