@@ -77,8 +77,10 @@ for (i = 0; i < matrix.length; i++) {       /* Цикл для рассчета 
 };
 
 for (i = 0; i < detParts.length; i++) {     /* Расчет детерминанта */
+    console.log("Делитель"+i.toString()+": "+(i+1))
     det = det * detParts[i]
 };
+console("Детерминант:")
 console.log(det);
 
 let xN;
