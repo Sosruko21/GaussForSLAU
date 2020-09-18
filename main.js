@@ -166,7 +166,7 @@ for (i = 0; i < mirrorMatrix.length; i++) {
 
 console.log('Обратный ход Гаусса:');
 console.log('Зануление ячеек выше главной диагонали');
-for (i = mirrorMatrix.length - 1; i > -1; i--) {
+for (i = mirrorMatrix.length - 1; i > 0; i--) {
     console.log('Шаг'+(mirrorMatrix.length-i).toString()+':')
     for (k = i - 1; k > -1; k--) {
         coef = mirrorMatrix[k][i] / mirrorMatrix[i][i];
