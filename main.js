@@ -33,6 +33,10 @@ for (i = 0; i < height; i++) {               /* Заполнение матри�
 
 let matrixClone = JSON.parse(JSON.stringify(matrix));  /* Дублирование исходной матрицы для вывода в консоль */
 console.log(matrixClone);
+console.log("Ваша матрица:")
+for (m = 0; m < matrix.length; m++) {
+    console.log('' + matrix[m]);
+};
 
 
 for (i = 0; i < matrix.length; i++) {       /* Цикл для рассчета детерминанта методом Гаусса */
