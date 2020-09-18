@@ -31,8 +31,7 @@ for (i = 0; i < height; i++) {               /* Заполнение матри�
     }
 };
 
-let matrixClone = JSON.parse(JSON.stringify(matrix));  /* Дублирование исходной матрицы для вывода в консоль */
-console.log(matrixClone);
+let matrixClone = JSON.parse(JSON.stringify(matrix));  /* Дублирование исходной матрицы для обратной матрицы */ /* (Особенность языка) */
 console.log("Ваша матрица:")
 for (m = 0; m < matrix.length; m++) {
     console.log('' + matrix[m]);
@@ -56,6 +55,7 @@ for (i = 0; i < matrix.length; i++) {       /* Цикл для рассчета 
     for (j = 0; j < matrix[0].length; j++) {
         matrix[i][j] = matrix[i][j] / detParts[i];      /* Разделение строки (перебор ячеек через цикл) на делитель */
     }
+    console.log('\n');
     console.log('Шаг' + (i + 1));
     for (m = 0; m < matrix.length; m++) {
         console.log('' + matrix[m]);
@@ -74,13 +74,16 @@ for (i = 0; i < matrix.length; i++) {       /* Цикл для рассчета 
     };
 };
 
+console.log('\n');
 for (i = 0; i < detParts.length; i++) {     /* Расчет детерминанта */
-    console.log("Делитель" + (i + 1).toString() + ": " + (detParts[i]));    
+    console.log("Делитель" + (i + 1).toString() + ": " + (detParts[i]));
     det = det * detParts[i]
 };
+console.log('\n');
 console.log("Детерминант:");
 console.log(det);
 
+console.log('\n');
 let xN;
 let xG = 0;
 let xMatrix = [];
@@ -109,6 +112,7 @@ for (i = 0; i < matrix.length; i++) {
     console.log('x5 = ' + x5);
 } */
 
+console.log('\n');
 let mirrorMatrix = [];
 mirrorMatrix = JSON.parse(JSON.stringify(matrixClone));
 for (i = 0; i < height; i++) {
@@ -127,6 +131,7 @@ for (i = 0; i < mirrorMatrix.length; i++) {  /* Создание новой ра
 
 let divider = [];
 
+console.log('\n');
 console.log('Расширенная исходная матрица: ')
 for (m = 0; m < mirrorMatrix.length; m++) {
     console.log('' + mirrorMatrix[m]);
@@ -143,10 +148,11 @@ for (i = 0; i < mirrorMatrix.length; i++) {
 
     divider[i] = mirrorMatrix[i][i];
 
-    
+
     for (j = 0; j < mirrorMatrix[0].length; j++) {
         mirrorMatrix[i][j] = mirrorMatrix[i][j] / divider[i];
     }
+    console.log('\n');
     console.log('Шаг' + (i + 1));
     for (m = 0; m < mirrorMatrix.length; m++) {
         console.log('' + mirrorMatrix[m]);
@@ -164,10 +170,12 @@ for (i = 0; i < mirrorMatrix.length; i++) {
     };
 }; /* Тут закончился прямой ход метода Гаусса */
 
+console.log('\n');
 console.log('Обратный ход Гаусса:');
-console.log('Зануление ячеек выше главной диагонали');
+console.log('Только зануление ячеек выше главной диагонали:');
 for (i = mirrorMatrix.length - 1; i > 0; i--) {
-    console.log('Шаг'+(mirrorMatrix.length-i).toString()+':')
+    console.log('\n');
+    console.log('Шаг' + (mirrorMatrix.length - i).toString() + ':')
     for (k = i - 1; k > -1; k--) {
         coef = mirrorMatrix[k][i] / mirrorMatrix[i][i];
         for (j = mirrorMatrix[0].length - 1; j > 0; j--) {
