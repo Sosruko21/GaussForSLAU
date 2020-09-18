@@ -80,7 +80,7 @@ for (i = 0; i < detParts.length; i++) {     /* Расчет детерминан
     console.log("Делитель" + (i + 1).toString() + ": " + (detParts[i]));
     det = det * detParts[i]
 };
-consol.log("Детерминант:");
+console.log("Детерминант:");
 console.log(det);
 
 let xN;
