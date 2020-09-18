@@ -157,12 +157,11 @@ for (i = 0; i < mirrorMatrix.length; i++) {
         coef = mirrorMatrix[k][i] / mirrorMatrix[i][i];
         for (j = 0; j < mirrorMatrix[0].length; j++) {
             mirrorMatrix[k][j] = mirrorMatrix[k][j] - (mirrorMatrix[i][j] * coef)
-
-            for (m = 0; m < mirrorMatrix.length; m++) {
-                console.log('' + mirrorMatrix[m]);
-            };
         }
     }
+    for (m = 0; m < mirrorMatrix.length; m++) {
+        console.log('' + mirrorMatrix[m]);
+    };
 }; /* Тут закончился прямой ход метода Гаусса */
 
 console.log('Обратный ход Гаусса:');
