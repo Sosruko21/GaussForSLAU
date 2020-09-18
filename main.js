@@ -178,5 +178,5 @@ for (i = mirrorMatrix.length - 1; i > -1; i--) {
     for (m = 0; m < mirrorMatrix.length; m++) {
         console.log('' + mirrorMatrix[m]);
     };
-}
-console.log(mirrorMatrix)
+};
+console.log(mirrorMatrix);
