@@ -10,3 +10,9 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+
+button {
+    display: block;
+    margin-top: 1vh;
+}

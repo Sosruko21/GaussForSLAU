@@ -26,7 +26,7 @@ for (i = 0; i < height; i++) {
 
 for (i = 0; i < height; i++) {               /* Заполнение матрицы пользователем */
     for (j = 0; j < width; j++) {
-        matrix[i][j] = prompt("Введите матрицу по одной ячейке")
+        matrix[i][j] = prompt("Введите ячейку "+(i+1).toString()+"x"+(j+1).toString())
     }
 };
 
@@ -186,5 +186,6 @@ for (i = mirrorMatrix.length - 1; i > 0; i--) {
     };
 };
 console.log(mirrorMatrix);
+console.log(matrix)
 console.log('\n');console.log('\n');console.log('\n');
 console.log('Придумал и написал Тагиров Сослан, М2О-310Б-18, 2020.09')

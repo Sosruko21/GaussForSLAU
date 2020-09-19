@@ -28,7 +28,7 @@ function gauss() {
 
     for (i = 0; i < height; i++) {               /* Заполнение матрицы пользователем */
         for (j = 0; j < width; j++) {
-            matrix[i][j] = prompt("Введите матрицу по одной ячейке")
+            matrix[i][j] = prompt("Введите ячейку "+(i+1).toString()+"x"+(j+1).toString())
         }
     };
 
