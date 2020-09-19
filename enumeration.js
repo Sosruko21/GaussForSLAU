@@ -10,13 +10,13 @@ function enumeration() {
     let d = [];
     let x = [];
 
-    height = prompt('Количество строк в вашей матрице');
+    height = parseInt(prompt('Количество строк в вашей матрице'));
 
     for (i = 0; i < height; i++) {
         matrix.push([]);
     };
 
-    width = prompt('Количество столбцов в вашей матрице');
+    width = height+1;
 
     for (i = 0; i < height; i++) {
         for (j = 0; j < width; j++) {
@@ -25,9 +25,7 @@ function enumeration() {
     };
 
     for (i = 0; i < height; i++) {
-        for (j = 0; j < width; j++) {
-            matrix[i][j] = parseInt(prompt("Введите ячейку "+(i+1).toString()+"x"+(j+1).toString()))
-        }
+        matrix[i] = prompt("Введите строку №" + (i + 1).toString()).split(' ')
     };
 
     a[0] = 0
