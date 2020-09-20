@@ -1,3 +1,4 @@
+'use strict';
 function gauss() {
     let matrix = [];        /* Объявление матрицы и всех необходимых переменных */
     let detParts = [];
@@ -29,6 +30,12 @@ function gauss() {
         matrix[i] = prompt("Введите строку №" + (i + 1).toString()).split(' ')
     };
 
+    for (i = 0; i < height; i++) {
+        for (j = 0; j < width; j++) {
+            matrix[i][j] = parseInt(matrix[i][j])
+        };
+    };
+
     let matrixClone = JSON.parse(JSON.stringify(matrix));  /* Дублирование исходной матрицы для обратной матрицы */ /* (Особенность языка) */
     console.log("Ваша матрица:")
     for (m = 0; m < matrix.length; m++) {
@@ -54,12 +61,12 @@ function gauss() {
             matrix[i][j] = matrix[i][j] / detParts[i];      /* Разделение строки (перебор ячеек через цикл) на делитель */
         }
         console.log('\n');
-        console.log('Шаг' + (i + 1));
+        console.log('Деление строки#' + (i + 1) + 'на ячейку главной диагонали' + (i+1)+'x'+(i+1));
         for (m = 0; m < matrix.length; m++) {
             console.log('' + matrix[m]);
         };
 
-        console.log('Зануление ячеек ниже главной диагонали')
+        console.log('Зануление ячеек ниже главной диагонали в столбце '+(i+1))
         for (k = i + 1; k < matrix.length; k++) {       /* Зануление ячеек, стоящих ниже главной диагонали */
             coef = matrix[k][i] / matrix[i][i];
             for (j = 0; j < matrix[0].length; j++) {

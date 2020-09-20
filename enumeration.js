@@ -1,3 +1,4 @@
+'use strict';
 function enumeration() {
 let height, width;
 let i, j, k;
@@ -25,7 +26,7 @@ for (i = 0; i < height; i++) {
 };
 
 for (i = 0; i < height; i++) {
-    matrix[i] = (prompt("Введите строку №" + (i + 1).toString()).split(' '));
+    matrix[i] = prompt("Введите строку №" + (i + 1).toString()).split(' ');
 };
 
 for(i=0; i<height; i++){
