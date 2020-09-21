@@ -94,9 +94,9 @@ function simpleIterations() {
         normaB = normaB1;
         console.log("||β||1 = " + normaBeta);
     } else {
-        for (i = 0; i < matrixBeta[0].length; i++) {
+        for (i = 0; i < 1; i++) {
             for (j = 0; j < matrixBeta.length; j++) {
-                clmnSum[i] = clmnSum[i] + Math.abs(matrixBeta[j][i]);
+                clmnSum[i] = clmnSum[i] + Math.abs(matrixBeta[j]);
             };
         };
         normaBeta = Math.max.apply(null, clmnSum);
