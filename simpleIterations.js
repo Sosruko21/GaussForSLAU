@@ -122,6 +122,7 @@ function simpleIterations() {
             deltaX[k] = Math.abs(x[i + 1][k] - x[i][k]);
         };
         eps[i] = (Math.pow(normaB, i + 1) / (1 - normaB)) * normaBeta;
+        
         x[i + 1][matrixB.length] = eps[i];
         x[i + 1][matrixB.length + 1] = Math.max.apply(null, deltaX);
     };
