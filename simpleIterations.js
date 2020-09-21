@@ -132,4 +132,4 @@ function simpleIterations() {
         }
     };
     console.log(x);
-}
+};

@@ -16,5 +16,10 @@ body {
 .buttons {
     display: block;
     margin-top: 1vh;
+    width: 30vw;
+}
 
+.pButtons {
+    text-align: center;
+    font-size: 1rem;
 }
