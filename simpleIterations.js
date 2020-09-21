@@ -83,7 +83,7 @@ function simpleIterations() {
         strSum[i] = 0;
     }
     for (j = 0; j < matrixB[0].length; j++) {
-        clmnSum[i] = 0;
+        clmnSum[j] = 0;
     }
 
     if (normaB1 < normaB2) {
