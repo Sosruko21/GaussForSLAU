@@ -96,7 +96,7 @@ function simpleIterations() {
     } else {
         for (i = 0; i < matrixBeta[0].length; i++) {
             for (j = 0; j < matrixBeta.length; j++) {
-                clmnSum[i] = clmnSum[i] + Math.abs(matrixB[j][i]);
+                clmnSum[i] = clmnSum[i] + Math.abs(matrixBeta[j][i]);
             };
         };
         normaBeta = Math.max.apply(null, clmnSum);
