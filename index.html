@@ -2,29 +2,34 @@
 <html>
 
 <head lang="ru">
-    <meta charset="utf-8">
-    <title>SLAU</title>
-    <script src="gaussChrome.js"></script>
-    <script src="enumeration.js"></script>
-    <script src="simpleIterations.js"></script>
-    <link rel="stylesheet" href="styles/styles.css">
+  <meta charset="utf-8">
+  <title>SLAU</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
-    <div class="main">
-        <div>
-            <button class="buttons" onclick="gauss()">
-                <p class="pButtons"> Метод Гаусса и обратная матрица</p>
-            </button>
-            <button class="buttons" onclick="enumeration()">
-                <p class="pButtons">Решение трёхдиагональной СЛАУ <br> методом перебора</p>
-            </button>
-            <button class="buttons" onclick="simpleIterations()">
-                <p class="pButtons">Метод простых итераций</p>
-            </button>
-        </div>
+  <div class="calculator_Wrapper">
+    <div class="calculator">
+      <button class="buttons" onclick="gauss()">
+        Метод Гаусса и обратная матрица
+      </button>
+      <button class="buttons" onclick="enumeration()">
+        Решение трёхдиагональной СЛАУ методом перебора
+      </button>
+      <button class="buttons buttons_iteration" onclick="simpleIterations()">
+        Метод простых итераций
+      </button>
+      <button class="buttons buttons_iteration" onclick="zeydelMethod()">
+        Метод Зейделя
+      </button>
     </div>
+  </div>
 
+  <script src="gaussChrome.js"></script>
+  <script src="enumeration.js"></script>
+  <script src="simpleIterations.js"></script>
+  <script src="zeydelMethod.js"></script>
 </body>
 
 </html>

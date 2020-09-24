@@ -1,25 +1,40 @@
-body {
+.calculator {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin: auto;
 }
-
-.main {
-    display: flex;
-    height: 100vh;
-    width: 50vw;
-    align-items: center;
-    justify-content: center;
-}
-
 
 .buttons {
     display: block;
-    margin-top: 1vh;
-    width: 30vw;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 15px 25px;
 }
 
-.pButtons {
-    text-align: center;
-    font-size: 1rem;
+
+@media (min-width: 768px) {
+    .calculator {
+        width: 400px;
+    }
+
+    .buttons {
+        padding: 15px 75px;
+    }
+}
+
+.calculator_Wrapper {
+    display: flex;
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.buttons_iteration {
+    width: 49%;
+    padding: 15px 15px;
 }
