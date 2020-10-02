@@ -119,5 +119,5 @@ function yakobi() {
 
         console.log(matrixA);
     };
-
+    console.log(matrixV)
 };
