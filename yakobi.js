@@ -55,16 +55,9 @@ function roundMatrix(x, k) {
 }
 
 function yakobi() {
-    let matrixA = [
-        [17, 1, 1],
-        [1, 17, 2],
-        [1, 2, 4]
-    ];
-    let matrixE = [
-        [1, 0, 0],
-        [0, 1, 0],
-        [0, 0, 1]
-    ];
+    let height, width;
+    let matrixA = [];
+    let matrixE = [];
     let matrixH = [];
     let matrixV = [];
     let i, j, k;
@@ -72,6 +65,35 @@ function yakobi() {
     let aMax;
     let fi;
     let matrixHT = [];
+
+    height = parseInt(prompt('Количество строк в вашей матрице'));
+    for (i = 0; i < height; i++) {
+        matrixA.push([]);
+        matrixE.push([]);
+    };
+
+    width = height;
+    for (i = 0; i < height; i++) {
+        for (j = 0; j < width; j++) {
+            matrixA[i].push(0);
+            if (i == j) { 
+                matrixE[i][j] = 1;
+            } else {
+                matrixE[i][j] = 0;
+            };
+        };
+    };
+
+    for (i = 0; i < height; i++) {
+        matrixA[i] = prompt("Введите строку №" + (i + 1).toString()).split(' ')
+    };
+
+    for (i = 0; i < height; i++) {
+        for (j = 0; j < width; j++) {
+            matrixA[i][j] = parseInt(matrixA[i][j])
+        };
+    };
+
 
     for (k = 0; k < 21; k++) {
         aMax = 0;

@@ -8,8 +8,6 @@ function gauss() {
     let coef;
     let det = 1;
     let cont;
-    let x, y, z;
-    let x1, x2, x3, x4, x5;
 
     alert('Производится ввод сразу расширеной матрицы')
     height = parseInt(prompt('Количество строк в вашей матрице')); /* Запрос у пользователя кол-ва строк */
