@@ -12,7 +12,6 @@ function zeydelMethod() {
     let x = [];
     let xActive = [];
     let eps = [];
-    let delta = [];
     let deltaX = [];
 
     height = parseInt(prompt('Количество строк в вашей матрице'));
@@ -137,4 +136,4 @@ function zeydelMethod() {
         }
     };
     console.log(x);
-}
+};

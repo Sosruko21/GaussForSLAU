@@ -1,73 +1,46 @@
 'use strict';
 function enumeration() {
-let height, width;
-let i, j, k;
-let matrix = [];
-let P = [0];
-let Q = [0];
-let a = [];
-let b = [];
-let c = [];
-let d = [];
-let x = [];
+    let height;
+    let i;
+    let P = [0];
+    let Q = [0];
+    let a = [];
+    let b = [];
+    let c = [];
+    let d = [];
+    let x = [];
 
-height = parseInt(prompt('Количество строк в вашей матрице'));
+    height = parseInt(prompt('Количество строк в вашей матрице'));
 
-for (i = 0; i < height; i++) {
-    matrix.push([]);
-};
+    a = prompt("Введите коэффиценты a").split(' ');
+    b = prompt("Введите коэффиценты b").split(' ');
+    c = prompt("Введите коэффиценты c").split(' ');
+    d = prompt("Введите вектор правых частей").split(' ');
 
-width = parseInt(height + 1);
-
-for (i = 0; i < height; i++) {
-    for (j = 0; j < width; j++) {
-        matrix[i].push(0);
-    }
-};
-
-for (i = 0; i < height; i++) {
-    matrix[i] = prompt("Введите строку №" + (i + 1).toString()).split(' ');
-};
-
-for(i=0; i<height; i++){
-    for(j=0;j<width; j++){
-        matrix[i][j]= parseInt(matrix[i][j])
+    for (i = 0; i < height; i++) {
+        a[i] = parseInt(a[i]);
+        b[i] = parseInt(b[i]);
+        c[i] = parseInt(c[i]);
+        d[i] = parseInt(d[i]);
     };
-};
 
-a[0] = 0
-c[matrix.length - 1] = 0
-
-for (i = 0; i < matrix.length; i++) {
-    if (i + 1 < matrix.length) {
-        a[i + 1] = matrix[i + 1][i];
+    console.log("Прогоночные коэффиценты:")
+    for (i = 1; i < height + 1; i++) {
+        P[i] = (-c[i - 1]) / (b[i - 1] + a[i - 1] * P[i - 1]);
+        Q[i] = (d[i - 1] - a[i - 1] * Q[i - 1]) / (b[i - 1] + a[i - 1] * P[i - 1]);
     };
-    b[i] = matrix[i][i];
-    if (i < matrix.length - 1) {
-        c[i] = matrix[i][i + 1]
+
+    for (i = 0; i < P.length; i++) {
+        console.log("P" + i.toString() + " = " + P[i]);
+        console.log("Q" + i.toString() + " = " + Q[i]);
+        console.log('\n');
     };
-    d[i] = matrix[i][matrix[0].length - 1]
-}
 
-
-
-console.log("Прогоночные коэффиценты:")
-for (i = 1; i < matrix.length + 1; i++) {
-    P[i] = (-c[i - 1]) / (b[i - 1] + a[i - 1] * P[i - 1]);
-    Q[i] = (d[i - 1] - a[i - 1] * Q[i - 1]) / (b[i - 1] + a[i - 1] * P[i - 1]);
-};
-
-for (i = 0; i < P.length; i++) {
-    console.log("P" + i.toString() + " = " + P[i]);
-    console.log("Q" + i.toString() + " = " + Q[i]);
     console.log('\n');
-}
-
-console.log('\n');
-console.log("Иксы:")
-x[Q.length - 1] = Q[Q.length - 1]
-for (i = Q.length - 2; i >= 0; i--) {
-    x[i] = Q[i] + P[i] * x[i + 1];
-    console.log('x' + (i + 1).toString() + ' = ' + x[i + 1])
-}
-}
+    console.log("Иксы:")
+    x[Q.length - 1] = Q[Q.length - 1]
+    for (i = Q.length - 2; i >= 0; i--) {
+        x[i] = Q[i] + P[i] * x[i + 1];
+        console.log('x' + (i + 1).toString() + ' = ' + x[i + 1])
+    };
+};
