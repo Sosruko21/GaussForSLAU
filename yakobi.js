@@ -76,7 +76,7 @@ function yakobi() {
     for (i = 0; i < height; i++) {
         for (j = 0; j < width; j++) {
             matrixA[i].push(0);
-            if (i == j) { 
+            if (i == j) {
                 matrixE[i][j] = 1;
             } else {
                 matrixE[i][j] = 0;
@@ -138,9 +138,9 @@ function yakobi() {
             matrixV = matrixMult(matrixV, matrixH)
             matrixV = roundMatrix(matrixV, 8);
         }
-        console.log("Матрица А"+k);
+        console.log("Матрица А" + k);
         console.log(matrixA);
-        console.log("Матрица H"+k);
+        console.log("Матрица H" + k);
         console.log(matrixH);
     };
     console.log("\nМатрица V");
