@@ -122,7 +122,7 @@ function yakobi() {
         matrixH[jCont][iCont] = Math.sin(fi);
         matrixH[jCont][jCont] = Math.cos(fi);
 
-        matrixH = roundMatrix(matrixH, 12)
+        matrixH = roundMatrix(matrixH, 8)
 
         matrixHT = transpon(matrixH);
 
