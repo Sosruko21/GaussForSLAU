@@ -138,9 +138,11 @@ function yakobi() {
             matrixV = matrixMult(matrixV, matrixH)
             matrixV = roundMatrix(matrixV, 8);
         }
-
+        console.log("Матрица А"+i)
         console.log(matrixA);
+        console.log("Матрица H"+i);
+        console.log(matrixH);
     };
-    console.log("\nМатрица V")
-    console.log(matrixV)
+    console.log("\nМатрица V");
+    console.log(matrixV);
 };
