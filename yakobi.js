@@ -55,7 +55,7 @@ function roundMatrix(x, k) {
 }
 
 function yakobi() {
-    let height, width;
+    let height, width, iterations;
     let matrixA = [];
     let matrixE = [];
     let matrixH = [];
@@ -65,6 +65,9 @@ function yakobi() {
     let aMax;
     let fi;
     let matrixHT = [];
+    let vVector = [];
+
+    iterations = parseInt(prompt('Количество итераций'));
 
     height = parseInt(prompt('Количество строк в вашей матрице'));
     for (i = 0; i < height; i++) {
@@ -95,7 +98,7 @@ function yakobi() {
     };
 
 
-    for (k = 0; k < 7; k++) {
+    for (k = 0; k < iterations; k++) {
         aMax = 0;
         for (i = 0; i < matrixA.length; i++) {
             for (j = i + 1; j < matrixA[i].length; j++) {
@@ -138,11 +141,20 @@ function yakobi() {
             matrixV = matrixMult(matrixV, matrixH)
             matrixV = roundMatrix(matrixV, 8);
         };
-        console.log("Матрица А" + (k+1));
+        console.log("Матрица А" + (k + 1));
         console.log(matrixA);
-        console.log("Матрица H" + (k+1));
+        console.log("Матрица H" + (k + 1));
         console.log(matrixH);
     };
     console.log("\nМатрица V");
     console.log(matrixV);
+
+    for (i = 0; i < width; i++) {
+        console.log('λ' + (i + 1).toString() + ' = ' + matrixA[i][i]);
+        for (j = 0; j < height; j++) {
+            matrixV[j][i] = matrixV[j][i] / matrixV[i][i];
+            vVector[j] = matrixV[j][i];
+        };
+        console.log('v' + (i + 1).toString() + ' = ' + vVector);
+    };
 };
