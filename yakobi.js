@@ -13,7 +13,7 @@ function transpon(A) {
     return B;
 };
 
-function matrixMult(A, B) {
+function matrixMult(A, B) { /* Только для квадратных одноразмерных матриц */
     let C = [];
     let i, j, k;
     for (i = 0; i < A.length; i++) {
