@@ -97,7 +97,6 @@ function yakobi() {
         };
     };
 
-
     for (k = 0; k < iterations; k++) {
         aMax = 0;
         for (i = 0; i < matrixA.length; i++) {
