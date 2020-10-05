@@ -62,7 +62,7 @@ function yakobi() {
     let matrixV = [];
     let i, j, k;
     let iCont, jCont;
-    let aMax;
+    let aMax, coef;
     let fi;
     let matrixHT = [];
     let vVector = [];
@@ -145,15 +145,18 @@ function yakobi() {
         console.log("Матрица H" + (k + 1));
         console.log(matrixH);
     };
+    let consoleV = JSON.parse(JSON.stringify(matrixV))
     console.log("\nМатрица V");
-    console.log(matrixV);
+    console.log(consoleV);
 
     for (i = 0; i < width; i++) {
         console.log('λ' + (i + 1).toString() + ' = ' + matrixA[i][i]);
+        coef = matrixV[i][i]
         for (j = 0; j < height; j++) {
-            matrixV[j][i] = matrixV[j][i] / matrixV[i][i];
+            matrixV[j][i] = matrixV[j][i] / coef;
             vVector[j] = matrixV[j][i];
         };
-        console.log('v' + (i + 1).toString() + ' = ' + vVector);
+        console.log('Вектор v' + (i + 1).toString());
+        console.log(vVector);
     };
 };
