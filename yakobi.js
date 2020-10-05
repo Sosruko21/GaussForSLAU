@@ -133,11 +133,11 @@ function yakobi() {
 
         if (k === 0) {
             matrixV = JSON.parse(JSON.stringify(matrixH))
-        }
+        };
         if (k > 0) {
             matrixV = matrixMult(matrixV, matrixH)
             matrixV = roundMatrix(matrixV, 8);
-        }
+        };
         console.log("Матрица А" + (k+1));
         console.log(matrixA);
         console.log("Матрица H" + (k+1));
