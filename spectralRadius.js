@@ -82,6 +82,7 @@ function spectralRadius() {
             euclidNorm = euclidNorm + Math.pow(vVect[i], 2);
         };
         euclidNorm = Math.sqrt(euclidNorm);
+        console.log('Норма вектора v'+(k+1).toString())
 
         for (i = 0; i < omegaVect.length; i++) {
             omegaVect[i] = vVect[i] / euclidNorm;
