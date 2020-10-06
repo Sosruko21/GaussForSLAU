@@ -117,6 +117,7 @@ function yakobi() {
                 fi = Math.PI / (-4)
             };
         };
+        console.log('fi' + (k + 1).toString + ' = ' + fi)
 
         matrixH = JSON.parse(JSON.stringify(matrixE));
         matrixH[iCont][iCont] = Math.cos(fi);
