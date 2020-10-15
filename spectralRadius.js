@@ -1,3 +1,4 @@
+'use strict';
 function multMatrixVector(A, B) {
     let C = [];
     let i, j;

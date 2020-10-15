@@ -156,3 +156,18 @@ function yakobi() {
 Проверка якоби 
 А * лямбда = лямбда * v
 */
+
+
+
+
+
+const fs = require("fs");
+let arr = [];
+let C = 0;
+let i;
+arr = fs.readFileSync("input.txt", "utf8").split(' ');
+for (i = 0; i < arr.length; i++) {
+    arr[i] = parseInt(arr[i]);
+    C = C + arr[i];
+}
+fs.writeFileSync("output.txt", C);
