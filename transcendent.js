@@ -135,6 +135,7 @@ function newton() {  /* 4.3 */
 
 function iterations() {
     let y = function (x) {
+        let i;
         xPartsSum = 0;
         for (i = 0; i < mathFunction.length; i++) {
             xPartsSum = xPartsSum + mathFunction[i][0] * Math.pow(x, mathFunction[i].length - 1);
@@ -142,12 +143,19 @@ function iterations() {
         return xPartsSum;
     };
     let g = function (x) {
+        let i;
         xPartsSum = 0;
         for (i = 1; i < mathFunction.length; i++) {
             xPartsSum = xPartsSum + mathFunction[i][0] * Math.pow(x, mathFunction[i].length - 1);
         };
         xPartsSum = xPartsSum * (-1);
-        return Math.pow(xPartsSum, 1 / (mathFunction[0].length - 1));
+        xPartsSum = xPartsSum / mathFunction[0][0];
+        if (xPartsSum < 0 && !(parseInt((mathFunction[0].length - 1) / 2) * 2 == mathFunction[0].length - 1)) {
+            xPartsSum = xPartsSum * (-1)
+            return Math.pow(xPartsSum, 1 / (mathFunction[0].length - 1)) * (-1);
+        } else {
+            return Math.pow(xPartsSum, 1 / (mathFunction[0].length - 1));
+        }
     };
 
     let i, j;
@@ -169,7 +177,7 @@ function iterations() {
     a = parseFloat(prompt('Введите число "a"'));
     b = parseFloat(prompt('Введите число "b"'));
     if (y(a) * y(b) < 0) {
-        results[1][0] = b;
+        results[1][0] = a;
         results[1][1] = y(results[1][0]);
         results[1][2] = g(results[1][0]);
         results[1][3] = diff(g, results[1][0]);
@@ -178,10 +186,10 @@ function iterations() {
     };
     for (i = 2; i < 10; i++) {
         results.push([]);
-        results[i][0]=(results[i - 1][2]);
-        results[i][1]=(y(results[i - 1][0]));
-        results[i][2]=(g(results[i - 1][0]));
-        results[i][3]=(diff(g, results[i - 1][0]));
+        results[i][0] = (results[i - 1][2]);
+        results[i][1] = (y(results[i][0]));
+        results[i][2] = (g(results[i][0]));
+        results[i][3] = (diff(g, results[i][0]));
     };
     console.log(results)
 
@@ -190,7 +198,7 @@ function iterations() {
 function transcendent() {
     let question = parseInt(
         prompt(
-            'Выберите номер программы\n1 - Метод половинных сечений\n2 - Метод хорд (секущих)\n--Ньютон ещё не работает--\n--Итерации ещё не работают--'
+            'Выберите номер программы\n1 - Метод половинных сечений\n2 - Метод хорд (секущих)\n--Ньютон ещё не работает--\n4 - Метод итераций'
         )
     );
     switch (question) {
