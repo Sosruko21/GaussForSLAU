@@ -158,7 +158,6 @@ function iterations() {
     let eps = prompt('Введите необходимую точность вычислений');
     let eps1 = eps + 1;
     let eps2 = eps + 1;
-    let epsGen = eps + 1;
     let xPartsSum = 0;
     let results = [['x', 'f(x)', 'g(x)', "g'(x)"], []];
 
@@ -179,10 +178,10 @@ function iterations() {
     };
     for (i = 2; i < 10; i++) {
         results.push([]);
-        results[i].push(results[i - 1][2]);
-        results[i].push(y(results[i - 1][0]));
-        results[i].push(g(results[i - 1][0]));
-        results[i].push(diff(g, results[i - 1][0]));
+        results[i][0]=(results[i - 1][2]);
+        results[i][1]=(y(results[i - 1][0]));
+        results[i][2]=(g(results[i - 1][0]));
+        results[i][3]=(diff(g, results[i - 1][0]));
     };
     console.log(results)
 
