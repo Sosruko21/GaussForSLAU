@@ -30,16 +30,6 @@ function roundMatrix(x) {
     return x;
 }
 
-/* Ruslan */
-
-for (i = 0; i < matrix.length; i++) {
-    for (k = i + 1; k < matrix.length; k++) {
-        coef = matrix[k][i] / matrix[i][i];
-        for (j = 0; j < matrix[i].length; j++) {
-            matrix[k][j] = matrix[k][j] - (matrix[i][j] * coef)
-        }
-    }
-}
 
 /* YAKOBI */
 
@@ -152,15 +142,10 @@ function yakobi() {
 };
 
 
-/* 
-Проверка якоби 
-А * лямбда = лямбда * v
-*/
 
 
 
-
-
+/* Node.js */
 const fs = require("fs");
 let arr = [];
 let C = 0;
@@ -171,3 +156,20 @@ for (i = 0; i < arr.length; i++) {
     C = C + arr[i];
 }
 fs.writeFileSync("output.txt", C);
+
+
+/* Интересный способ дифференциации */
+function slope(f, x) {
+
+    return (f(x + dx) - f(x)) / dx;
+}
+
+let dx = 0.00000001;
+let f = function (x) { return (Math.pow(x, 2) - 2); }
+let dy = function (x) { return (f(x+dx)-f(x));}
+let f1 = function (x) {return (dy/dx);}
+slope(f, 3)
+slope(f1, 3)
+
+
+/* Мой способ дифференциации */
