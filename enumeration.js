@@ -12,10 +12,10 @@ function enumeration() {
 
     height = parseInt(prompt('Количество строк в вашей матрице'));
 
-    a = prompt("Введите коэффиценты a").split(' ');
-    b = prompt("Введите коэффиценты b").split(' ');
-    c = prompt("Введите коэффиценты c").split(' ');
-    d = prompt("Введите вектор правых частей").split(' ');
+    a = prompt("Введите коэффиценты a").toString().split(' ');
+    b = prompt("Введите коэффиценты b").toString().split(' ');
+    c = prompt("Введите коэффиценты c").toString().split(' ');
+    d = prompt("Введите вектор правых частей").toString().split(' ');
 
     for (i = 0; i < height; i++) {
         a[i] = parseFloat(a[i]);
