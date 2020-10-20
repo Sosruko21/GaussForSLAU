@@ -18,10 +18,10 @@ function enumeration() {
     d = prompt("Введите вектор правых частей").toString().split(' ');
 
     for (i = 0; i < height; i++) {
-        a[i] = parseFloat(a[i]);
-        b[i] = parseFloat(b[i]);
-        c[i] = parseFloat(c[i]);
-        d[i] = parseFloat(d[i]);
+        a[i] = eval(a[i]);
+        b[i] = eval(b[i]);
+        c[i] = eval(c[i]);
+        d[i] = eval(d[i]);
     };
 
     console.log("Прогоночные коэффиценты:")
